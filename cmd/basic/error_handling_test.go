@@ -1,6 +1,9 @@
 package basic
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 /*
 Error handling in Go is based on the concept of returning errors as values from
@@ -9,7 +12,7 @@ languages. This approach encourages explicit error handling, making code more
 robust and easier to reason about.
 
 In Go, errors are represented by the error interface, which has a single method signature:
- */
+*/
 
 //	type error interface {
 //    	Error() string
@@ -25,7 +28,7 @@ an error occurs, the function will return a non-nil error value that describes
 the error.
 
 Here's an example of a function that returns an error value:
- */
+*/
 
 func Divide(a, b float64) (float64, error) {
 	if b == 0 {
@@ -44,9 +47,9 @@ To handle errors returned by a function, you can use the if statement to check
 if the error value is nil. If the error value is not nil, you can take
 appropriate action to handle the error. Here's an example of how you might use
 the Divide() function and handle any errors it returns
- */
+*/
 
-func main() {
+func TestErrorHandling(t *testing.T) {
 	result, err := Divide(10, 2)
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
@@ -63,5 +66,4 @@ program. Otherwise, we print the result of the division.
 Go also provides the panic() function to terminate a program immediately with an
 error message, but it is generally recommended to use error values and explicit
 error handling instead of panicking.
- */
-
+*/

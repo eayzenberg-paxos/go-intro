@@ -3,9 +3,10 @@ package basic
 import (
 	"fmt"
 	"math/rand"
+	"testing"
 )
 
-func main() {
+func TestControlStructuresSyntax(t *testing.T) {
 	x := rand.Int()
 
 	if x > 0 {
@@ -20,7 +21,7 @@ func main() {
 		fmt.Println(i)
 	}
 
-	day := []string{"Monday", "White house", "Google"}[abs(x) % 3]
+	day := []string{"Monday", "White house", "Google"}[abs(x)%3]
 
 	switch day {
 	case "Monday":
@@ -31,7 +32,6 @@ func main() {
 		fmt.Println("It's another day")
 	}
 }
-
 
 func abs(x int) int {
 	if x < 0 {

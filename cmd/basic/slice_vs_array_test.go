@@ -1,6 +1,9 @@
 package basic
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // In Go, both slices and arrays are used to store ordered collections of elements, but they have some key differences.
 
@@ -38,13 +41,14 @@ func modifySlice(s []int) {
 	s[0] = 100
 }
 
-func main() {
+func TestSliceVsArray(t *testing.T) {
 	a := [3]int{1, 2, 3}
 	b := []int{1, 2, 3}
 	modifyArray(a) // a is unchanged
 	modifySlice(b) // b is modified
 	fmt.Println(a, b)
 }
+
 //In this example, we define two functions, modifyArray and modifySlice, that
 //take an array and a slice, respectively, and modify the first element.We then
 //call these functions with an array a and a slice b, and print the

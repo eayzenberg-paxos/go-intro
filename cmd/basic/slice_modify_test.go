@@ -1,8 +1,11 @@
 package basic
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func TestSliceModify(t *testing.T) {
 	// Example 1: Modifying a slice element
 	nums := []int{1, 2, 3, 4, 5}
 	nums[2] = 10

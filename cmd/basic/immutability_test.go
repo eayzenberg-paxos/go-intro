@@ -1,6 +1,9 @@
 package basic
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 /*
 Go is not a pure functional language, so it does not have built-in support for
@@ -11,9 +14,9 @@ One common approach to achieving immutability in Go is to use immutable data
 structures. This means using data structures that do not allow modification
 after they are created, such as maps or structs with read-only fields. Here's an
 example:
- */
+*/
 
-func main() {
+func TestImmutability(t *testing.T) {
 	person := Person{Name: "Alice", Age: 30}
 	// create a new struct with the same values as person, but with a different name
 	newPerson := Person{Name: "Bob", Age: person.Age}

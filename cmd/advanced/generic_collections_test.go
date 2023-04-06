@@ -1,6 +1,9 @@
 package advanced
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // requires go1.20+ and latest GoLand 2023+
 
@@ -14,7 +17,7 @@ func Map[T any, R any](slice []T, mapper func(value T, index int, slice []T) R) 
 	return mapped
 }
 
-func main() {
+func TestGenericCollections(t *testing.T) {
 	println(
 		Map[int, string]([]int{1, 2, 3}, func(value int, index int, slice []int) string {
 			return fmt.Sprint(value)
