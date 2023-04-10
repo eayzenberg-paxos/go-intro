@@ -1,6 +1,10 @@
-module go-intro
+module github.com/eayzenberg-paxos/go-intro
 
 go 1.20
+
+//replace (
+//	github.com/eayzenberg-paxos/intro latest => github.com/eayzenberg-paxos/go-intro latest
+//)
 
 require (
 	github.com/golang/mock v1.6.0
