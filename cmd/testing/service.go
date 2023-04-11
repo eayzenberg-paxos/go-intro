@@ -1,4 +1,4 @@
-//go:generate mockgen -destination=mocks/service.go -package=testing github.com/eayzenberg-paxos/go-intro/cmd/testing Service
+//go:generate mockgen -destination=mocks/service.go -package=testing --build_flags=--mod=mod github.com/eayzenberg-paxos/go-intro/cmd/testing Service
 package testing
 
 import "context"
@@ -10,14 +10,5 @@ type ServiceArgs struct {
 }
 
 type Service interface {
-	Process(context.Context, ServiceArgs) string
-}
-
-type ServiceImpl struct {
-	dependency1 string
-	dependency2 string
-}
-
-func (s *ServiceImpl) Process(ctx context.Context, args ServiceArgs) string {
-	return ""
+	Process(context.Context, ServiceArgs) (string, error)
 }
