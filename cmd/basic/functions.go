@@ -1,18 +1,14 @@
 package basic
 
-/*
-In Go, export functions are functions that are accessible from outside of the
-package in which they are defined. By convention, an exported function's name
-starts with a capital letter.
-
-Exported functions can be used by other packages or programs, and are an
-important way of encapsulating functionality and providing a clean API to other
-developers.
-
-Here's an example of an exported function in Go: */
-
 func MyExportedFunction(arg1 int, arg2 string) (bool, string, error) {
-	// do something with arg1 and arg2
+
+	/* In Go, export functions are functions that are accessible from outside of the
+	package in which they are defined. By convention, an exported function's name
+	starts with a capital letter.
+	Exported functions can be used by other packages or programs, and are an
+	important way of encapsulating functionality and providing a clean API to other
+	developers. */
+
 	return true, "Alex", nil
 }
 
