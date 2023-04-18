@@ -29,12 +29,10 @@ func TestGenericCollections(t *testing.T) {
 
 type HighOrderList[T any] []T
 
-func (list HighOrderList[T]) mapList[V any](mapper func(T) V) HighOrderList[V] {
+func (list HighOrderList[T]) mapList(mapper func(T) V) HighOrderList[V] {
 	out := make([]V, len(list))
 	for i, t2 := range list {
 		out[i] = mapper(t2)
 	}
 	return out
-}
-
-*/
+}*/

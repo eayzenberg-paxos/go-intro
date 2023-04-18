@@ -127,5 +127,29 @@ func TestSelectInFor(t *testing.T) {
 			break
 		}
 	}
+}
 
+func TestSelectDefaultWithSleep(t *testing.T) {
+	tick := time.Tick(100 * time.Millisecond)
+	boom := time.After(500 * time.Millisecond)
+
+	ticked := 0
+	boomed := 0
+
+	for boomed == 0 {
+		select {
+		case <-tick:
+			fmt.Println("tick.")
+			ticked++
+		case <-boom:
+			fmt.Println("BOOM!")
+			boomed++
+		default:
+			fmt.Println("    .")
+			time.Sleep(50 * time.Millisecond)
+		}
+	}
+
+	assert.Equal(t, 4, ticked)
+	assert.Equal(t, 1, boomed)
 }

@@ -15,6 +15,7 @@ func TestChannels(t *testing.T) {
 	ch := make(chan int)
 
 	go func() { // creates a non OS level thread called 'goroutine'
+		//time.Sleep(2 * time.Second)
 		ch <- 42
 	}()
 
